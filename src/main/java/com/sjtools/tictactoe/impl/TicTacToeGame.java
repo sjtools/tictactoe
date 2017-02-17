@@ -265,7 +265,7 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
     /**
      * Populate winning options available for players
      */
-    private void generateWinningOptionsForPlayers()
+    protected void generateWinningOptionsForPlayers()
     {
         winningOptionsForPlayers = new HashMap<>();
         for (int i = 0; i< players ; i++)
