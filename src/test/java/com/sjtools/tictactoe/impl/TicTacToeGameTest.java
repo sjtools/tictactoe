@@ -11,6 +11,7 @@ import static org.mockito.Mockito.when;
  */
 public class TicTacToeGameTest
 {
+
     @Test(expected =  IllegalArgumentException.class)
     public void contructor_ShouldThrowIllegaArgumentExceptionOnInvalidBoard()throws Exception
     {
@@ -56,6 +57,14 @@ public class TicTacToeGameTest
                         g.getRows() == (TicTacToeBoard.DEFAULT_ROWS +15) &&
                         g.getColumns() == (TicTacToeBoard.DEFAULT_COLUMNS + 17));
 
+    }
+    @Test(expected =  IllegalArgumentException.class)
+    public void initialize_ShouldClearBoard() throws Exception
+    {
+        TicTacToeBoard b = Mockito.mock(TicTacToeBoard.class);
+        Mockito.doThrow(new IllegalArgumentException("clearBoard invoked"))
+                .doNothing().when(b).clearBoard();
+        TicTacToeGame g = new TicTacToeGame(TicTacToeGame.DEFAULT_PLAYERS, b);
     }
 
 }
