@@ -24,7 +24,6 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
     private static int INVALID_PLAYER = -1;
     private static int UP_DIAGONAL_OPTION = -1;
     private static int DOWN_DIAGONAL_OPTION = -2;
-    private static int ROW_KEY_BASE_MULTIPLIER = 1000;
 
     //board players
     int players=0;
@@ -40,7 +39,7 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
 
     //possible winning options for players
     //Map<playerId, Map<optionId,optionValue>>
-    Map<Integer,Map<Integer,Object>> winningOptionsForPlayers;
+    Map<Integer,Map<String,Object>> winningOptionsForPlayers;
 
     //if there are any more winning options for any players
     boolean isWinningOptionAvailable = false;
@@ -230,7 +229,7 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
      * @param playerId player to check options for
      * @return Map of options <Integer,?>, empty if playerID is not valid or no options {@link #isValidPlayerId(int)}
      */
-    public Map<Integer,?> getWinningOptionAvailableForPlayer(int playerId)
+    public Map<String,?> getWinningOptionAvailableForPlayer(int playerId)
     {
         if (!isValidPlayerId(playerId) || null==winningOptionsForPlayers.get(playerId))
         {
@@ -286,7 +285,7 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
      */
     protected void generateWinningOptionsForPlayer(int playerId)
     {
-        Map<Integer,Object> winningOptions = new HashMap<>();
+        Map<String,Object> winningOptions = new HashMap<>();
         winningOptionsForPlayers.put(playerId, winningOptions);
         //can win by checking each row
         for(int i = 0; i < board.getRows(); i ++)
@@ -339,7 +338,7 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
      * @param playerWhoChecked player to update board for
      * @param optionKeysForCell relevant options
      */
-    protected void updateOptionsPool(int playerWhoChecked, List<Integer> optionKeysForCell)
+    protected void updateOptionsPool(int playerWhoChecked, List<String> optionKeysForCell)
     {
         if (!isValidPlayerId(playerWhoChecked) ||
                 isGameWon() ||
@@ -353,8 +352,8 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
             - remove that option for all other players (they cannot win here)
             - check if there are still any winning options still
          */
-        Map<Integer, Object> winningOptionsForPlayer = winningOptionsForPlayers.get(playerWhoChecked);
-        for (Integer key : optionKeysForCell)
+        Map<String, Object> winningOptionsForPlayer = winningOptionsForPlayers.get(playerWhoChecked);
+        for (String key : optionKeysForCell)
         {
             if (null!=winningOptionsForPlayer)
             {
@@ -422,9 +421,9 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
      * @param cellCol cell col coord
      * @return List of option keys (empty if none or invalid params)
      */
-    protected List<Integer> getOptionKeysForCell(int cellRow, int cellCol)
+    protected List<String> getOptionKeysForCell(int cellRow, int cellCol)
     {
-        List<Integer> res = new LinkedList<>();
+        List<String> res = new LinkedList<>();
         res.add(getRowOptionKey(cellRow));
         res.add(getColumnOptionKey(cellCol));
         if (board.isCellOnDownDiagonal(cellRow,cellCol))
@@ -443,9 +442,10 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
      * @param cellRow row to get its key for
      * @return option key relevant to given row
      */
-    protected int getRowOptionKey(int cellRow)
+    protected String getRowOptionKey(int cellRow)
     {
-        return cellRow * ROW_KEY_BASE_MULTIPLIER+ROW_KEY_BASE_MULTIPLIER;
+
+        return "r"+cellRow;
     }
 
     /**
@@ -453,25 +453,25 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
      * @param cellCol column to get its key for
      * @return option key relevant to given column
      */
-    protected int getColumnOptionKey(int cellCol)
+    protected String getColumnOptionKey(int cellCol)
     {
-        return cellCol;
+        return "c"+cellCol;
     }
 
     /** get up diagonal option key
      * @return up diagonal option key
      */
-    protected int getUPDiagonalOptionKey()
+    protected String getUPDiagonalOptionKey()
     {
-        return UP_DIAGONAL_OPTION;
+        return "d"+UP_DIAGONAL_OPTION;
     }
 
     /**
      * get down diagonal option key
      * @return down diagonal option key
      */
-    protected int getDownDiagonalOptionKey()
+    protected String getDownDiagonalOptionKey()
     {
-        return DOWN_DIAGONAL_OPTION;
+        return "d"+DOWN_DIAGONAL_OPTION;
     }
 }
