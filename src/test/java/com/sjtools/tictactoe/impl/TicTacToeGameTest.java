@@ -58,8 +58,9 @@ public class TicTacToeGameTest
                         g.getColumns() == (TicTacToeBoard.DEFAULT_COLUMNS + 17));
 
     }
+
     @Test(expected =  IllegalArgumentException.class)
-    public void initialize_ShouldClearBoard() throws Exception
+    public void constructor_ShouldClearBoard() throws Exception
     {
         TicTacToeBoard b = Mockito.mock(TicTacToeBoard.class);
         Mockito.doThrow(new IllegalArgumentException("clearBoard invoked"))
