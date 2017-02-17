@@ -1,4 +1,4 @@
-# tictactoe
+# tictactoegame
 TicTacToe console game
 - Human players only
 
