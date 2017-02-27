@@ -108,7 +108,7 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
     }
 
     /**
-     * Get current player, INVALID_PLAYER is game didn't start yet
+     * Get current player, INVALID_PLAYER if game hasn't start yet
      * @return
      */
     public int getCurrentPlayer()
@@ -167,7 +167,7 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
     }
 
     /**
-     * set winner, use INVALID_PLAYER then
+     * set winner
      * @param player
      */
     public void setWinner(int player)
@@ -310,7 +310,7 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
     /**
      * Check cell.
      * Cell can be checked if params are valid and game is not already won and it is not checked yet
-     * After heck is done board is updated (may be winning check or board full or no more options)
+     * After check is done board is updated (may be winning check or board full or no more options)
      * @param playerId who checks (zero-based)
      * @param cellRow   row coord to check
      * @param cellCol   cell coord to check
@@ -350,7 +350,7 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
             - update cells checked for that option for the player
             - if player checked all cells for that option, then set game as won already
             - remove that option for all other players (they cannot win here)
-            - check if there are still any winning options still
+            - check if there are any winning options still
          */
         Map<String, Object> winningOptionsForPlayer = winningOptionsForPlayers.get(playerWhoChecked);
         for (String key : optionKeysForCell)
@@ -379,7 +379,7 @@ public class TicTacToeGame implements TicTacToeGamePhaseIfc, TicTacToeBoardPrope
                 }
             }
         }
-        //check if there are still any winning options still
+        //check if there are any winning options still
         setIsWinningOptionsAvailable(checkWinningOptionsAvailable());
     }
 
