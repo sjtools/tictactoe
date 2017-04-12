@@ -1,9 +1,13 @@
 package com.sjtools.tictactoe.app;
 
-import com.sjtools.tictactoe.decors.*;
-import com.sjtools.tictactoe.ifc.TicTacToeBoardIfc;
-import com.sjtools.tictactoe.impl.TicTacToeBoard;
-import com.sjtools.tictactoe.impl.TicTacToeGame;
+import com.sjtools.tictactoe.board.decors.TicTacToeBoardDecorIfc;
+import com.sjtools.tictactoe.board.decors.TicTacToeDefaultBoardDecor;
+import com.sjtools.tictactoe.board.decors.TicTacToeDefaultBoardGridCellDecor;
+import com.sjtools.tictactoe.board.decors.TicTacToeDefaultBoardGridDecor;
+import com.sjtools.tictactoe.board.decors.*;
+import com.sjtools.tictactoe.board.ifc.TicTacToeBoardIfc;
+import com.sjtools.tictactoe.board.impl.TicTacToeBoard;
+import com.sjtools.tictactoe.game.impl.TicTacToeGame;
 import com.sjtools.tictactoe.utils.TicTacToeGameConsoleInput;
 import com.sjtools.tictactoe.utils.TicTacToeGameInputIfc;
 

@@ -1,6 +1,4 @@
-package com.sjtools.tictactoe.ifc;
-
-import com.sjtools.tictactoe.decors.TicTacToeBoardDecorIfc;
+package com.sjtools.tictactoe.board.ifc;
 
 /**
  * Created by sjtools on 14.02.2017.

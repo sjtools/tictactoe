@@ -1,4 +1,4 @@
-package com.sjtools.tictactoe.ifc;
+package com.sjtools.tictactoe.game.ifc;
 
 /**
  * Created by sjtools on 11.02.2017.

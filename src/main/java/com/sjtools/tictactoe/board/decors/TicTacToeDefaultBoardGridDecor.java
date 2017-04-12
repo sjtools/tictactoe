@@ -1,8 +1,7 @@
-package com.sjtools.tictactoe.decors;
+package com.sjtools.tictactoe.board.decors;
 
-import com.sjtools.tictactoe.ifc.TicTacToeBoardIfc;
+import com.sjtools.tictactoe.board.ifc.TicTacToeBoardIfc;
 
-import java.io.OutputStream;
 import java.io.PrintStream;
 
 /**

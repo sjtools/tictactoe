@@ -1,4 +1,4 @@
-package com.sjtools.tictactoe.decors;
+package com.sjtools.tictactoe.board.decors;
 
 import java.io.PrintStream;
 

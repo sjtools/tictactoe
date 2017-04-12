@@ -1,9 +1,9 @@
-package com.sjtools.tictactoe.impl;
+package com.sjtools.tictactoe.game.impl;
 
-import com.sjtools.tictactoe.impl.TicTacToeBoard;
-import com.sjtools.tictactoe.impl.TicTacToeGame;
-import com.sjtools.tictactoe.impl.TicTacToeGamePhaseFinished;
-import com.sjtools.tictactoe.impl.TicTacToeGamePhaseInProgress;
+import com.sjtools.tictactoe.board.impl.TicTacToeBoard;
+import com.sjtools.tictactoe.game.impl.TicTacToeGame;
+import com.sjtools.tictactoe.game.impl.TicTacToeGamePhaseFinished;
+import com.sjtools.tictactoe.game.impl.TicTacToeGamePhaseInProgress;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

@@ -1,6 +1,6 @@
-package com.sjtools.tictactoe.impl;
+package com.sjtools.tictactoe.game.impl;
 
-import com.sjtools.tictactoe.impl.TicTacToeGamePhaseFinished;
+import com.sjtools.tictactoe.game.impl.TicTacToeGamePhaseFinished;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

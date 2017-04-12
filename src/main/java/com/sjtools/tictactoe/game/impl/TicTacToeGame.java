@@ -1,8 +1,8 @@
-package com.sjtools.tictactoe.impl;
+package com.sjtools.tictactoe.game.impl;
 
-import com.sjtools.tictactoe.ifc.TicTacToeBoardIfc;
-import com.sjtools.tictactoe.ifc.TicTacToeBoardPropertiesIfc;
-import com.sjtools.tictactoe.ifc.TicTacToeGamePhaseIfc;
+import com.sjtools.tictactoe.board.ifc.TicTacToeBoardIfc;
+import com.sjtools.tictactoe.board.ifc.TicTacToeBoardPropertiesIfc;
+import com.sjtools.tictactoe.game.ifc.TicTacToeGamePhaseIfc;
 
 import java.util.*;
 

@@ -1,5 +1,7 @@
-package com.sjtools.tictactoe.impl;
+package com.sjtools.tictactoe.game.impl;
 
+import com.sjtools.tictactoe.board.impl.TicTacToeBoard;
+import com.sjtools.tictactoe.game.impl.TicTacToeGame;
 import org.junit.Test;
 import org.mockito.Mockito;
 

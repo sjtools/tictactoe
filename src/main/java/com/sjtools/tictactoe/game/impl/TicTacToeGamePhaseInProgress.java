@@ -1,6 +1,6 @@
-package com.sjtools.tictactoe.impl;
+package com.sjtools.tictactoe.game.impl;
 
-import com.sjtools.tictactoe.ifc.TicTacToeGamePhaseIfc;
+import com.sjtools.tictactoe.game.ifc.TicTacToeGamePhaseIfc;
 
 /**
  * Created by sjtools on 12.02.2017.

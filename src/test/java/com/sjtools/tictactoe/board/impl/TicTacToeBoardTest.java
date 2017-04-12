@@ -1,6 +1,7 @@
-package com.sjtools.tictactoe.impl;
+package com.sjtools.tictactoe.board.impl;
 
-import com.sjtools.tictactoe.ifc.TicTacToeBoardPropertiesIfc;
+import com.sjtools.tictactoe.board.ifc.TicTacToeBoardPropertiesIfc;
+import com.sjtools.tictactoe.board.impl.TicTacToeBoard;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

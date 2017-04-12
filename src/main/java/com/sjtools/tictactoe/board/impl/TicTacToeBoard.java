@@ -1,10 +1,10 @@
 /**
  * Created by sjtools on 09.02.2017.
  */
-package com.sjtools.tictactoe.impl;
+package com.sjtools.tictactoe.board.impl;
 
 
-import com.sjtools.tictactoe.ifc.TicTacToeBoardIfc;
+import com.sjtools.tictactoe.board.ifc.TicTacToeBoardIfc;
 
 import java.io.PrintStream;
 
