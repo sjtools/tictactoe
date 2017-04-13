@@ -8,8 +8,14 @@ import com.sjtools.tictactoe.board.decors.*;
 import com.sjtools.tictactoe.board.ifc.TicTacToeBoardIfc;
 import com.sjtools.tictactoe.board.impl.TicTacToeBoard;
 import com.sjtools.tictactoe.game.impl.TicTacToeGame;
+import com.sjtools.tictactoe.player.TicTacToePlayerFactory;
+import com.sjtools.tictactoe.player.TicTacToePlayerType;
+import com.sjtools.tictactoe.player.ifc.TicTacToePlayerIfc;
 import com.sjtools.tictactoe.utils.TicTacToeGameConsoleInput;
 import com.sjtools.tictactoe.utils.TicTacToeGameInputIfc;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by sjtools on 11.02.2017.
@@ -21,6 +27,8 @@ public class TicTacToeGameApp
     TicTacToeBoardIfc board = null;
     TicTacToeBoardDecorIfc boardDisplayDecor = null;
     TicTacToeGameInputIfc inputScanner;
+
+    Map<Integer, TicTacToePlayerIfc> gamePlayers = new HashMap<>();
 
     public TicTacToeGameApp()
     {
@@ -49,6 +57,7 @@ public class TicTacToeGameApp
                 //nothing to do
             }
         }
+        initPlayers(players);
         while (rows <3) {
             System.out.print("Tell the board rows (3-255):");
             try {
@@ -81,6 +90,23 @@ public class TicTacToeGameApp
             board = null;
         }
         return result;
+    }
+
+    private void initPlayers(int players)
+    {
+        if (players<=0)
+            this.gamePlayers.clear();
+        else
+        {
+            for(int i=0;i<players;i++)
+            {
+                TicTacToePlayerIfc player = TicTacToePlayerFactory.getInstance().createPlayer(
+                        players%2==1 ? TicTacToePlayerType.COMPUTER : TicTacToePlayerType.HUMAN
+                );
+                gamePlayers.put(i,player);
+            }
+        }
+
     }
 
     private void setDisplayDecor(boolean fancyDecor)
